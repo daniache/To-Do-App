@@ -1,6 +1,6 @@
 # 📝 To-Do App
 
-A web-based task management application that allows users to create, view, edit, and delete tasks. Designed for simplicity and clarity, this project features a clean, responsive interface inspired by GOV.UK design principles to enhance usability and accessibility.
+A simple and interactive web application that allows users to add, edit, complete, and delete tasks. Built using React and styled with Tailwind CSS, the app is designed to help users stay organized through a clean, minimal interface.
 
 ---
 
@@ -39,7 +39,7 @@ A web-based task management application that allows users to create, view, edit,
    ```bash
    git clone https://github.com/daniache/To-Do-App.git
    cd To-Do-App
-
+   OR download the project as a zip code
 
 ## ✨ FEATURES TO EXPAND
 
