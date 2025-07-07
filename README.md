@@ -18,7 +18,7 @@ A simple and interactive web application that allows users to add, edit, complet
 
 - ➕ Add new tasks using an input field and action button  
 - ✅ Mark tasks as complete or incomplete  
-- 📝 Edit task names inline (coming soon!)
+- 📝 Edit task names inline
 - ❌ Delete tasks from the list  
 - 📭 Display a message when no tasks exist  
 
