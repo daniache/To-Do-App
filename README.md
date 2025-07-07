@@ -41,7 +41,7 @@ A web-based task management application that allows users to create, view, edit,
    cd To-Do-App
 
 
-✨ FEATURES TO EXPAND
+## ✨ FEATURES TO EXPAND
 
     User authentication and login system
 
@@ -50,6 +50,6 @@ A web-based task management application that allows users to create, view, edit,
     Drag-and-drop task ordering
 
 
-📁 FOLDER STRUCTURE
+
 
     
