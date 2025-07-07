@@ -39,7 +39,23 @@ A simple and interactive web application that allows users to add, edit, complet
    ```bash
    git clone https://github.com/daniache/To-Do-App.git
    cd To-Do-App
-   OR download the project as a zip code
+
+2. **Install the project dependencies**
+    ```bash
+   npm install
+    
+3. **Start the development server**
+   ```bash
+   npm run dev
+   
+4. **Open the app in your browser**
+   
+   Once the dev server is running, it will display a URL like this:
+   ```arduino
+   
+   VITE vX.X.X  ready in Xs
+   
+   ➜  Local:   http://localhost:5173/
 
 ## ✨ FEATURES TO EXPAND
 
