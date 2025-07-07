@@ -1,15 +1,15 @@
-import React, {useEffect, useRef, useState } from 'react'
-import Todoitems from './Todoitems'
-import list_todo from '../assets/list_todo.svg'
+import { useEffect, useRef, useState } from 'react';
+import list_todo from '../assets/list_todo.svg';
+import Todoitems from './Todoitems';
 
 const Todo = () => {
 
 const [todoList, setTodoList ] = useState([]);
 
-const inputRef = useRef();
+const taskInputRef = useRef();
 
-const add =()=>{
-    const inputText = inputRef.current.value.trim();
+const handleAddTask =()=>{
+    const inputText = taskInputRef.current.value.trim();
 
     if(inputText === "") {
         return null;
@@ -21,11 +21,11 @@ const add =()=>{
         isComplete: false,
     }
     setTodoList((prev)=> [...prev, newTodo]);
-    inputRef.current.value = "";
+    taskInputRef.current.value = "";
     
 }
 
-const delTodo = (id)=>{
+const handleDelTask = (id)=>{
     setTodoList((prvTodos)=>{
         return prvTodos.filter((todo) => todo.id !== id)
     })
@@ -42,6 +42,14 @@ const toggleCheckFunction = (id)=>{
     })
 }
 
+const editTask = (id, newText ) => {
+    setTodoList((prevTodos) =>
+        prevTodos.map((todo) =>
+            todo.id === id ? {...todo, text: newText } : todo
+        )
+    );
+};
+
 useEffect(()=>{
     console.log(todoList);
 },[todoList])
@@ -57,8 +65,8 @@ useEffect(()=>{
 
 {/* ------ input inbox ------------------- */}
     <div className='flex items-center my-7 bg-gray-200 rounded-full'>
-        <input ref={inputRef} className='bg-transparent border-0 outline-none flex-1 h-14 pl-6 pr-2 placeholder:text-slate-600' type="text" placeholder='Add your task'/>
-        <button onClick={add} className='border-none rounded-full bg-green-600 hover:bg-green-700 transition w-32 h-14 text-white  text-lg font-medium cursor-pointer'> ADD +</button>
+        <input ref={taskInputRef} className='bg-transparent border-0 outline-none flex-1 h-14 pl-6 pr-2 placeholder:text-slate-600' type="text" placeholder='Add your task'/>
+        <button onClick={handleAddTask} className='border-none rounded-full bg-green-600 hover:bg-green-700 transition w-32 h-14 text-white  text-lg font-medium cursor-pointer'> ADD +</button>
     </div>
 
     <div>
@@ -71,7 +79,7 @@ useEffect(()=>{
      <div>
         {todoList.map ((item, index)=>{
             return <Todoitems key={index} text={item.text} id={item.id} 
-            isComplete={item.isComplete} delTodo={delTodo} toggleCheckFunction={toggleCheckFunction}/> 
+            isComplete={item.isComplete} handleDelTask={handleDelTask} toggleCheckFunction={toggleCheckFunction} editTask={editTask}/> 
         })}
       
      </div>
@@ -79,7 +87,7 @@ useEffect(()=>{
     
     </div>
 
-
+ 
   )
 }
 
